@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Эко-лаборатория: бесконечные периодические дроби</title>
+<style>
+  body { font-family: sans-serif; background: #f0fdf4; padding: 16px; max-width: 600px; margin: auto; color: #14532d; }
+  h1 { font-size: 20px; text-align: center; color: #166534; }
+  .block { background: white; border-radius: 12px; padding: 16px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .block h2 { font-size: 16px; margin-bottom: 12px; color: #166534; }
+  .q { margin-bottom: 16px; border-bottom: 1px dashed #dcfce7; padding-bottom: 12px; }
+  .q p { font-weight: 500; margin-bottom: 8px; }
+  label { display: block; padding: 10px; margin: 4px 0; background: #f8fafc; border-radius: 8px; border: 2px solid transparent; cursor: pointer; }
+  label:has(input:checked) { background: #dcfce7; border-color: #16a34a; }
+  input[type="radio"] { margin-right: 8px; transform: scale(1.2); }
+  input[type="text"], select { width: 100%; padding: 12px; font-size: 16px; border: 2px solid #bbf7d0; border-radius: 8px; box-sizing: border-box; }
+  select { margin-bottom: 10px; background-color: white; }
+  button { background: #16a34a; color: white; border: none; padding: 16px; width: 100%; font-size: 18px; font-weight: bold; border-radius: 10px; cursor: pointer; margin-top: 20px; }
+  button:disabled { background: #94a3b8; }
+  .success { display: none; text-align: center; padding: 20px; background: #dcfce7; border-radius: 12px; color: #166534; font-weight: bold; margin-top: 20px; }
+  .error { display: none; text-align: center; padding: 20px; background: #fee2e2; border-radius: 12px; color: #991b1b; font-weight: bold; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<h1>🌿 Эко-лаборатория</h1>
+
+<div id="quiz-container">
+  <div class="block">
+    <h2>Ваш класс и имя</h2>
+    <select id="student-class">
+      <option value="6А">6 «А» класс</option>
+      <option value="6Б">6 «Б» класс</option>
+      <option value="6В">6 «В» класс</option>
+    </select>
+    <input type="text" id="student-name" placeholder="Иванов Петя" required>
+  </div>
+
+  <!-- ИНДИВИДУАЛЬНАЯ РАБОТА (5 вопросов по 1 баллу) -->
+  <div class="block">
+    <h2>1️⃣ Индивидуальная работа (по 1 баллу)</h2>
+    <div class="q"><p>1. В школьном эко-отряде 2/3 мусора отправили на переработку. Как записать долю 2/3 в виде десятичной дроби?</p>
+      <label><input type="radio" name="ind1" value="0"> 0,6</label>
+      <label><input type="radio" name="ind1" value="1"> 0,(6)</label>
+      <label><input type="radio" name="ind1" value="0"> 0,(3)</label>
+      <label><input type="radio" name="ind1" value="0"> 0,66</label>
+    </div>
+    <div class="q"><p>2. Анализ воды в озере показал концентрацию вещества 0,(364) мг/л. Чему равен период этой дроби?</p>
+      <label><input type="radio" name="ind2" value="0"> 3</label>
+      <label><input type="radio" name="ind2" value="0"> 36</label>
+      <label><input type="radio" name="ind2" value="1"> 364</label>
+      <label><input type="radio" name="ind2" value="0"> 643</label>
+    </div>
+    <div class="q"><p>3. Какая из дробей при делении числителя на знаменатель даёт бесконечную периодическую дробь?</p>
+      <label><input type="radio" name="ind3" value="0"> 1/4</label>
+      <label><input type="radio" name="ind3" value="0"> 7/20</label>
+      <label><input type="radio" name="ind3" value="0"> 9/5</label>
+      <label><input type="radio" name="ind3" value="1"> 5/6</label>
+    </div>
+    <div class="q"><p>4. Доля вторсырья в контейнере равна 0,(5). Запишите её обыкновенной дробью.</p>
+      <label><input type="radio" name="ind4" value="0"> 5/10</label>
+      <label><input type="radio" name="ind4" value="1"> 5/9</label>
+      <label><input type="radio" name="ind4" value="0"> 1/5</label>
+      <label><input type="radio" name="ind4" value="0"> 5/99</label>
+    </div>
+    <div class="q"><p>5. Доля озеленённой территории школьного двора записана как 0,(18). Какая цифра стоит на 25-м месте после запятой?</p>
+      <label><input type="radio" name="ind5" value="1"> 1</label>
+      <label><input type="radio" name="ind5" value="0"> 8</label>
+      <label><input type="radio" name="ind5" value="0"> 2</label>
+      <label><input type="radio" name="ind5" value="0"> 0</label>
+    </div>
+  </div>
+
+  <!-- ПАРНАЯ РАБОТА (4 вопроса по 2 балла) -->
+  <div class="block">
+    <h2>2️⃣ Работа в паре (по 2 балла)</h2>
+    <div class="q"><p>1. Доля загрязнённых проб воды равна 0,(36). Запишите эту дробь обыкновенной несократимой дробью.</p>
+      <label><input type="radio" name="pair1" value="0"> 36/100</label>
+      <label><input type="radio" name="pair1" value="2"> 4/11</label>
+      <label><input type="radio" name="pair1" value="0"> 36/9</label>
+      <label><input type="radio" name="pair1" value="0"> 9/25</label>
+    </div>
+    <div class="q"><p>2. Два фильтра очистили воду: первый на 0,(7) от нормы, второй на 0,77. Какой фильтр очистил больше?</p>
+      <label><input type="radio" name="pair2" value="2"> Первый</label>
+      <label><input type="radio" name="pair2" value="0"> Второй</label>
+      <label><input type="radio" name="pair2" value="0"> Одинаково</label>
+      <label><input type="radio" name="pair2" value="0"> Сравнить нельзя</label>
+    </div>
+    <div class="q"><p>3. В эко-проекте бумага составляет 0,(3) всех отходов, а пластик — 0,(6). Какую долю всех отходов они составляют вместе?</p>
+      <label><input type="radio" name="pair3" value="0"> 0,9</label>
+      <label><input type="radio" name="pair3" value="2"> 1</label>
+      <label><input type="radio" name="pair3" value="0"> 0,(1)</label>
+      <label><input type="radio" name="pair3" value="0"> 10</label>
+    </div>
+    <div class="q"><p>4. Концентрация вещества равна 1/7 мг/л. Если разделить 1 на 7, получится 0,(142857). Сколько цифр в периоде этой дроби?</p>
+      <label><input type="radio" name="pair4" value="0"> 3</label>
+      <label><input type="radio" name="pair4" value="2"> 6</label>
+      <label><input type="radio" name="pair4" value="0"> 7</label>
+      <label><input type="radio" name="pair4" value="0"> 9</label>
+    </div>
+  </div>
+
+  <!-- ГРУППОВАЯ РАБОТА (3 вопроса по 3 балла) -->
+  <div class="block">
+    <h2>3️⃣ Работа в группе (по 3 балла)</h2>
+    <div class="q"><p>1. В городе 11 одинаковых контейнеров для раздельного сбора, 7 из них заполнены. Запишите долю заполненных контейнеров 7/11 в виде бесконечной периодической дроби.</p>
+      <label><input type="radio" name="grp1" value="3"> 0,(63)</label>
+      <label><input type="radio" name="grp1" value="0"> 0,(36)</label>
+      <label><input type="radio" name="grp1" value="0"> 0,(7)</label>
+      <label><input type="radio" name="grp1" value="0"> 0,63</label>
+    </div>
+    <div class="q"><p>2. Высота молодой ели равна 1,(3) м. Запишите это число обыкновенной дробью.</p>
+      <label><input type="radio" name="grp2" value="0"> 13/10</label>
+      <label><input type="radio" name="grp2" value="3"> 4/3</label>
+      <label><input type="radio" name="grp2" value="0"> 10/9</label>
+      <label><input type="radio" name="grp2" value="0"> 13/9</label>
+    </div>
+    <div class="q"><p>3. Датчик выдаёт повторяющуюся группу цифр: 0,(142857). Какая цифра стоит на 100-м месте после запятой?</p>
+      <label><input type="radio" name="grp3" value="0"> 1</label>
+      <label><input type="radio" name="grp3" value="0"> 4</label>
+      <label><input type="radio" name="grp3" value="0"> 2</label>
+      <label><input type="radio" name="grp3" value="3"> 8</label>
+    </div>
+  </div>
+
+  <button id="submit-btn" onclick="submitResults()">✅ Отправить результаты</button>
+</div>
+
+<div class="success" id="success-msg">
+  <h2>Успешно отправлено!</h2>
+  <p>Можете закрыть эту страницу. Учитель увидит ваш результат в таблице.</p>
+</div>
+
+<div class="error" id="error-msg">
+  <h2>Ошибка отправки</h2>
+  <p>Проверьте интернет и попробуйте еще раз.</p>
+  <button onclick="location.reload()">Попробовать снова</button>
+</div>
+
+<script>
+// ВАША ССЫЛКА НА СКРИПТ GOOGLE (УБЕДИТЕСЬ, ЧТО ОНА СОВПАДАЕТ С ТОЙ, ЧТО В РАЗВЕРТЫВАНИИ)
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzUOKxRl8uusoCGXETycx0lsK4oMdwVc6yKVYd4OaDMZ66D6p3P0QloY06sAxAFUKvVhA/exec';
+
+function submitResults() {
+  const className = document.getElementById('student-class').value;
+  const name = document.getElementById('student-name').value.trim();
+  
+  if (!name) { alert('Пожалуйста, введите вашу фамилию и имя!'); return; }
+
+  // Проверяем, что ученик ответил на все 12 вопросов
+  let allAnswered = true;
+  for(let i=1; i<=5; i++) if(!document.querySelector(`input[name="ind${i}"]:checked`)) allAnswered = false;
+  for(let i=1; i<=4; i++) if(!document.querySelector(`input[name="pair${i}"]:checked`)) allAnswered = false;
+  for(let i=1; i<=3; i++) if(!document.querySelector(`input[name="grp${i}"]:checked`)) allAnswered = false;
+  
+  if (!allAnswered) {
+    alert('Пожалуйста, ответьте на ВСЕ вопросы (их всего 12)!');
+    return;
+  }
+
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.innerText = 'Отправка...';
+
+  // Считаем баллы (за правильный ответ: инд - 1, пара - 2, группа - 3)
+  let indScore = 0, pairScore = 0, grpScore = 0;
+  
+  for(let i=1; i<=5; i++) {
+    if(document.querySelector(`input[name="ind${i}"]:checked`).value === '1') indScore += 1;
+  }
+  for(let i=1; i<=4; i++) {
+    if(document.querySelector(`input[name="pair${i}"]:checked`).value === '2') pairScore += 2;
+  }
+  for(let i=1; i<=3; i++) {
+    if(document.querySelector(`input[name="grp${i}"]:checked`).value === '3') grpScore += 3;
+  }
+
+  // Собираем данные
+  const data = {
+    name: className + ' | ' + name, 
+    indScore: indScore,
+    pairScore: pairScore,
+    grpScore: grpScore
+  };
+
+  // Отправляем в Google
+  fetch(SCRIPT_URL, {
+    method: 'POST',
+    body: JSON.stringify(data)
+  })
+  .then(response => {
+    document.getElementById('quiz-container').style.display = 'none';
+    document.getElementById('success-msg').style.display = 'block';
+  })
+  .catch(err => {
+    document.getElementById('quiz-container').style.display = 'none';
+    document.getElementById('error-msg').style.display = 'block';
+  });
+}
+</script>
+</body>
+</html>
